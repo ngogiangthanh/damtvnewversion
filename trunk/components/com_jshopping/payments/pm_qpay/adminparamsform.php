@@ -1,0 +1,66 @@
+<div class="col100">
+<fieldset class="adminform">
+<table class="admintable" width = "100%" >
+ <tr>
+   <td style="width:250px;" class="key">
+     <?php echo "Customer Id";?>
+   </td>
+   <td>
+     <input type = "text" class = "inputbox" name = "pm_params[customerId]" size="45" value = "<?php echo $params['customerId']?>" />
+   </td>
+ </tr>
+ <tr>
+   <td class="key">
+     <?php echo "Secret";?>
+   </td>
+   <td>
+     <input type = "text" class = "inputbox" name = "pm_params[secret]" size="45" value = "<?php echo $params['secret']?>" />
+   </td>
+ </tr>
+ <tr>
+   <td class="key">
+     <?php echo "Open in";?>
+   </td>
+   <td>
+     <?php              
+     print JHTML::_('select.genericlist', $windowtype, 'pm_params[windowtype]', 'class = "inputbox" size = "1"', 'id', 'name', $params['windowtype'] );
+     ?>
+   </td>
+ </tr> 
+ <tr>
+   <td class="key">
+     <?php echo _JSHOP_TRANSACTION_END;?>
+   </td>
+   <td>
+     <?php              
+     print JHTML::_('select.genericlist', $orders->getAllOrderStatus(), 'pm_params[transaction_end_status]', 'class = "inputbox" size = "1"', 'status_id', 'name', $params['transaction_end_status'] );
+     ?>
+   </td>
+ </tr>
+ <tr>
+   <td class="key">
+     <?php echo _JSHOP_TRANSACTION_PENDING;?>
+   </td>
+   <td>
+     <?php 
+     echo JHTML::_('select.genericlist',$orders->getAllOrderStatus(), 'pm_params[transaction_pending_status]', 'class = "inputbox" size = "1"', 'status_id', 'name', $params['transaction_pending_status']);
+     ?>
+   </td>
+ </tr>
+ <tr>
+   <td class="key">
+     <?php echo _JSHOP_TRANSACTION_FAILED;?>
+   </td>
+   <td>
+     <?php 
+     echo JHTML::_('select.genericlist',$orders->getAllOrderStatus(), 'pm_params[transaction_failed_status]', 'class = "inputbox" size = "1"', 'status_id', 'name', $params['transaction_failed_status']);
+     ?>
+   </td>
+ </tr>
+ </tr>
+</table>
+</fieldset>
+</div>
+<div class="clr"></div>
+<input type="hidden" name="pm_params[iframe_width]" value="610">
+<input type="hidden" name="pm_params[iframe_height]" value="635">

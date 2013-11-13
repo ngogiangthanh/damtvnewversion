@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="2.5" client="site" method="upgrade">
+<name>Sj Categories Slider for JoomShopping</name> 
+	<creationDate>July 2013</creationDate>
+    <author>YouTech Company</author>
+    <copyright>Copyright (c) 2013 YouTech Company</copyright>
+    <license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+    <authorEmail>contact@ytcvn.com</authorEmail>
+    <authorUrl>http://www.smartaddons.com</authorUrl>
+    <version>1.0.0</version>
+    <description>TPL_YTFRAMEWORK_XML_DESCRIPTION</description>
+    <files>
+        <filename module="mod_sj_js_categories_slider">mod_sj_js_categories_slider.php</filename>
+        <filename>index.html</filename>
+        <folder>core</folder>
+        <folder>language</folder>
+        <folder>tmpl</folder>
+		<folder>assets</folder>
+    </files>
+    <languages />    
+    <config>
+        <fields name="params" addfieldpath="/modules/mod_sj_js_categories_slider/core/fields">
+            <fieldset name="basic">
+                <field name="target" type="list" default="_self" label="Open Link" description="The Type shows when you click on the link">
+                    <option value="_blank">New Window</option>
+                    <option value="_self">Same Window</option>
+                    <option value="_windowopen">Popup window</option>
+                </field>  
+                <field name="theme" type="radio" class="btn-group" default="theme1" label="Layout" description="Layout">
+                    <option value="theme1">Layout 01</option>
+                    <option value="theme2">Layout 02</option>
+                </field>
+                <field name="button_display" type="radio" class="btn-group" default="1" label="Show Control" description="">
+                    <option value="1">Yes</option>
+                    <option value="0">No</option>
+                </field>                
+                <field name="control" type="list" default="style" label="Control Type" description="">
+                    <option value="style">Type 01</option>
+                    <option value="style2">Type 02</option>
+                    <option value="style3">Type 03</option>
+                </field>    
+                <field name="anchor" type="list" default="top" label="Control Position" description="">
+                    <option value="top">Top</option>
+                    <option value="bottom">Bottom</option>
+                    <option value="middle">Middle</option>                  
+                </field>               
+            </fieldset>            
+            
+            <fieldset name="source" label="Source Options">
+                <field name="catids" type="categories" multiple="true" default = "" label="Categories" description="Categories" addfieldpath="/modules/mod_jshopping_tophits_products/element"/>
+                <field
+                    name="sort"
+                    type="list"
+                    default="id"
+                    label="Sort"
+                    description="Sort Category Oder By">
+                    <option
+                        value="id">ID</option>
+                    <option
+                        value="name">NAME</option>
+                    <option
+                        value="order">ORDERING</option>                        
+                </field>                
+                <field
+                    name="ordering"
+                    type="radio"
+                    default="asc"
+                    label="Order Dir" class="btn-group"
+                    description="Category Order Dir">
+                    <option
+                        value="asc">ASCENDING</option>
+                    <option
+                        value="desc">DESCENDING</option>
+                </field>
+				              
+                <field name="count_cat" type="text" default="20" label="Limitation" description="Maximum number of category to display. Enter 0 for unlimited selection." />
+            </fieldset>   
+            
+            <fieldset name="category" label="Category Options">
+                <field name="cat_title_display" type="radio" class="btn-group" default="1" label="CAT_TITLE_DISPLAY_LABEL" description="CAT_TITLE_DISPLAY_DESC">
+					<option value="1">Yes</option>
+					<option value="0">No</option>
+				</field>
+				<field name="category_title_max_characs" type="text" default="25" label="CAT_TITLE_LENGTH_LABEL" description="CAT_TITLE_LENGTH_DESC" />
+				<field name="cat_desc_display" type="radio" class="btn-group" default="1" label="CAT_DESC_DISPLAY_LABEL" description="CAT_DESC_DISPLAY_DESC">
+					<option value="1">Yes</option>
+					<option value="0">No</option>
+				</field>
+				<field name="category_desc_max_characs" type="text" default="100" label="CAT_DESC_LENGTH_LABEL" description="CAT_DESC_LENGTH_DESC" /> 
+				<field name="item_readmore_display" type="radio" default="1" class="btn-group" label="DISPLAY_READMORE_LABEL" description="DISPLAY_READMORE_DESC">
+					<option value="1">Yes</option>
+					<option value="0">No</option>
+				</field> 
+				<field name="item_readmore_text" type="text" default="Read more" label="READMORE_TEXT_LABEL" description="READMORE_TEXT_DESC" />
+			</fieldset>
+
+            <fieldset name="image_option" label="Image Options">
+				<field type="sjheading"  label="Get Images From Image"/> 
+                <field name="imgcfgcat_from_image" label="From Image" class="btn-group" description="Get images From image" type="radio" default="1">
+                     <option value="1">Yes</option>
+                     <option value="0">No</option>
+                </field>
+				<field type="sjheading" label="Get Images From Image Description" />	
+				<field name="imgcfgcat_from_description" label="IMAGE_DESCRIPTION_LABEL" class="btn-group" description="IMAGE_DESCRIPTION_DESC" type="radio" default="1">
+					<option value="1">Yes</option>
+					<option value="0">No</option>
+			    </field>
+				<field type="sjheading"  label="Get Images From Extend Folder"/> 
+                <field name="imgcfgcat_from_external" label="From External" class="btn-group" description="Get Image from External" type="radio" default="1">
+                     <option value="1">Yes</option>
+                     <option value="0">No</option>
+                </field>
+                <field name="imgcfgcat_external_url" type="text" default="images/{name}.jpg" label="External Path (or Url)" description="External Path (URL)"/>
+                <field name="imgcfgcat_order" type="text" default="image, description, external" label="Order to Get" description="Order to Get Image" />
+                <field name="imgcfgcat_function" type="list" label="Resize Mode" default="resize_stretch" description="Resize Mode">
+                     <option value="none">None</option>
+                     <option value="resize_center">Center</option>
+                     <option value="resize_fill">Fill</option>
+                     <option value="resize_fit">Fit</option>
+                     <option value="resize_stretch">Stretch</option>
+                </field>
+                <field name="imgcfgcat_type" type="list" default="" label="IMAGE_TYPE_LABEL" description="IMAGE_TYPE_DESC">
+				     <option value="">Default</option>
+				     <option value="1">GIF</option>
+				     <option value="2">JPEG</option>
+				     <option value="3">PNG</option>
+			    </field>
+			    <field name="imgcfgcat_transparency" label="KEEP_TRANSPARENCY_LABEL" class="btn-group" description="KEEP_TRANSPARENCY_DESC" type="radio" default="1">
+				     <option value="1">Yes</option>
+				     <option value="0">No</option>
+			    </field>
+			    <field name="imgcfgcat_width" type="text" default="200" label="IMAGE_WIDTH_LABEL" description="IMAGE_WIDTH_DESC" />
+			    <field name="imgcfgcat_height" type="text" default="200" label="IMAGE_HEIGHT_LABEL" description="IMAGE_HEIGHT_DESC" />
+			    <field name="imgcfgcat_background" type="color" default="#FFFFFF" label="BACKGROUND_LABEL" description="BACKGROUND_DESC" />
+               <!--  <field name="imgcfgcat_placeholder" label="DEFAULT_IMAGE_LABEL" class="btn-group" description="DEFAULT_IMAGE_DESC" type="radio" default="1">
+	                 <option value="1">Yes</option>
+	                 <option value="0">No</option>
+                </field> -->
+                <field name="imgcfgcat_placeholder_path" type="text" default="modules/mod_sj_js_categories_slider/assets/images/nophoto.jpg" label="PLACE_HOLDER_PATH_LABEL" description="PLACE_HOLDER_PATH_DESC"/>             
+            </fieldset>    
+            
+            <fieldset name="effect_options" label="Effect Options">
+                <field name="play" class="btn-group" type="radio" default="1" label="Auto Play" description="Auto Play">
+					<option value="1">Yes</option>
+					<option value="0">No</option>
+				</field>
+				<field name="effect" type="radio" class="btn-group" default="slide" label="Effect" description="Effect">
+					<option value="slide">Slide</option>
+					<option value="fade">Fade</option>
+				</field>
+				<field name="swipe_enable" type="radio" default="1" class="btn-group" label="SWIPE_LABEL" description="SWIPE_DESC">
+					<option value="1">Yes</option>
+                    <option value="0">No</option>
+				</field>				
+				<field name="start" type="text" default="1" label="Start" description="Article Start" />
+                <field name="scroll" type="text" default="1" label="Step" description="Number of article will be slided" />
+                <field name="duration" type="text" default="800" label="Speed" description="Speed of slider. Larger = Slower" />
+                <field name="delay" type="text" default="2500" label="Interval" description="Speed of Timer. Larger = Slower" />
+				<field name="pause_hover" type="radio" class="btn-group"  default="hover" label="Stop when hover" description="Stop when hover">
+					<option value="hover">Yes</option>
+					<option value="0">No</option>
+				</field>
+		   </fieldset>                                      
+            
+            <fieldset name="advanced">
+                <field name="moduleclass_sfx" type="text" default="" label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL" description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />            
+                <field name="deviceclass_sfx" type="textarea" default="preset01-4 preset02-3 preset03-2 preset04-2 preset05-1" label="Device Class Suffix" description="" />
+				<field name="layout" type="modulelayout"
+					label="JFIELD_ALT_LAYOUT_LABEL" description="JFIELD_ALT_MODULE_LAYOUT_DESC" />
+				 <field name="include_jquery" type="radio" class="btn-group" default="0" label="Include jQuery" description="select Yes if you want use for joomla 2.5">
+                    <option value="1">Yes</option>
+                    <option value="0">No</option>
+                </field>    
+               <!--  <field name="include_jquery_joom" type="radio" class="btn-group" default="0" label="Show jQuery in Page" description="Show jquery in joomshopping page and use for joomla 2.5">
+                    <option value="1">Yes</option>
+                    <option value="0">No</option>
+                </field> -->
+				<field name="pretext" type="textarea" default="" label="Pre-text" description="Intro text of module" cols="40" rows="4" filter="raw" />
+				<field name="posttext" type="textarea" default="" label="Post-text" description="Footer text of module" cols="40" rows="4" filter="raw" />
+				<field name="owncache" type="list" default="1"
+					label="COM_MODULES_FIELD_CACHING_LABEL" description="COM_MODULES_FIELD_CACHING_DESC" >
+					<option value="1">JGLOBAL_USE_GLOBAL</option>
+					<option value="0">COM_MODULES_FIELD_VALUE_NOCACHING
+					</option>
+				</field>
+				<field name="cache_time" type="text" default="900"
+					label="COM_MODULES_FIELD_CACHE_TIME_LABEL" description="COM_MODULES_FIELD_CACHE_TIME_DESC" />
+            </fieldset>  
+                      
+        </fields>
+    </config>
+</extension>

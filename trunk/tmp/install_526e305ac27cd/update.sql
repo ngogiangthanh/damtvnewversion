@@ -1,0 +1,2 @@
+INSERT INTO `#__jshopping_payment_method` ( `name_en-GB`,`name_de-DE`, `payment_code`, `payment_class`, `payment_params`, `payment_type`, `show_descr_in_email`) 
+VALUES( 'Authorize.net Credit Card', 'Authorize.net Credit Card', 'AUTHNETCC', 'pm_authorizenet_aim', 'transaction_end_status=6\ntransaction_pending_status=1\ntransaction_failed_status=3', 2, 0);

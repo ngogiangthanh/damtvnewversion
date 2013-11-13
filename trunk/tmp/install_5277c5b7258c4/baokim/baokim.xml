@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<install version="2.5" type="plugin" group="vmpayment" >
+
+    <name>Vm Payment plugin BaoKim</name>
+    <creationDate>2012</creationDate>
+    <author>BAOKIM</author>
+    <authorUrl>wwww.zend.vn</authorUrl>
+    <copyright>ZendVN</copyright>
+    <license>http://www.gnu.org/licenses/gpl-3.0.html GNU/GPL</license>
+    <version>2.0.0RC3</version>
+    <description><![CDATA[<a href="https://www.baokim.com" target="_blank">BAOKIM</a> ]]> </description>
+    
+    <files>
+		<filename plugin="baokim">baokim.php</filename>
+    </files>
+    
+    <languages>
+		<language tag="en-GB">en-GB.plg_vmpayment_baokim.ini</language>
+    </languages>
+    
+    <params addpath="/administrator/components/com_virtuemart/elements">
+		<param type="vmjpluginwarning" />
+		
+		<param name="baokim_merchant_email"  
+			size="50" label="VMPAYMENT_BAOKIM_MERCHANT_EMAIL" type="text" default="zendvn@gmail.com" description="VMPAYMENT_BAOKIM_MERCHANT_EMAIL_DESC" />
+		
+		<param name="baokim_merchant_id"  
+			size="50" label="VMPAYMENT_BAOKIM_MERCHANT_ID" type="text" description="VMPAYMENT_BAOKIM_MERCHANT_ID_DESC" />
+		
+		<param name="baokim_secure_pass"  
+			size="50" label="VMPAYMENT_BAOKIM_SECURE_PASS" type="text" description="VMPAYMENT_BAOKIM_SECURE_PASS_DESC" />
+			
+		<param name="status_pending" 
+			type="vmorderstate" scope="com_virtuemart" default="P" label="VMPAYMENT_STATUS_PENDING" description="VMPAYMENT_STATUS_PENDING_DESC" />
+		
+		<param name="status_success" 
+			type="vmorderstate" scope="com_virtuemart" default="C" label="VMPAYMENT_STATUS_SUCCESS" description="VMPAYMENT_STATUS_SUCCESS_DESC" />
+		
+		<param name="status_canceled" 
+			type="vmorderstate" scope="com_virtuemart" default="X" label="VMPAYMENT_STATUS_FAILED" description="VMPAYMENT_STATUS_FAILED_DESC" />
+			
+		<param name="countries" 
+			type="vmcountries" scope="com_virtuemart" default="" label="VMPAYMENT_BAOKIM_COUNTRY" description="VMPAYMENT_BAOKIM_COUNTRY_DESC"/>
+		
+		<param name="min_amount" type="text"  
+			label="VMPAYMENT_STANDARD_MIN_AMOUNT" description="VMPAYMENT_STANDARD_MIN_AMOUNT_EXPLAIN" />
+		
+		<param name="max_amount" 
+			type="text"  label="VMPAYMENT_STANDARD_MAX_AMOUNT" description="VMPAYMENT_STANDARD_MAX_AMOUNT_EXPLAIN" />
+	</params>
+</install>
