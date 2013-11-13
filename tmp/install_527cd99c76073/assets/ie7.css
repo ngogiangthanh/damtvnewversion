@@ -1,0 +1,25 @@
+﻿.ytc-content-slideshow .cover-theme1{
+	position:relative; 
+	z-index:200; 
+	bottom:80px;
+	right:10px;
+}
+
+.ytc-content-slideshow .theme2{
+	bottom:50px
+}
+
+.ytc-content-slideshow .theme2 ul{
+	list-style: none;
+	color:#B9B8BD; font-weight:bold; height:40px;
+	top:6px;position:relative;
+	font-size:13pt;
+	left:6px
+}
+
+.ytc-content-slideshow .cover-theme1{
+	position:relative; 
+	z-index:200; 
+	bottom:76px;
+	right:10px;
+}

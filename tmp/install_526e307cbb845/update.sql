@@ -1,0 +1,2 @@
+INSERT INTO `#__jshopping_payment_method` ( `name_en-GB`,`name_de-DE`, `payment_code`, `payment_class`, `payment_params`, `payment_type`, `show_descr_in_email`) 
+VALUES( 'Saferpay', 'Saferpay', 'Saferpay', 'pm_saferpay', 'testmode=1\naid=\nportalid=\nkey=\ntransaction_end_status=6\ntransaction_pending_status=1\ntransaction_failed_status=3', 2, 0);
