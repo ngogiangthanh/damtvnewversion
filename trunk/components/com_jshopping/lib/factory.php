@@ -29,7 +29,7 @@ class JSFactory{
             $config->loadCurrencyValue();
 
 			$params = JComponentHelper::getParams('com_languages');
-            $frontend_lang = $params->get('site', 'en-GB');
+            $frontend_lang = $params->get('site', 'vi-VN');
             $config->frontend_lang = $frontend_lang;
 
             $lang = JFactory::getLanguage();

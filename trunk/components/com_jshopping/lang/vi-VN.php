@@ -427,7 +427,7 @@ define('_JSHOP_ORDER_DETAILS','Order details');
 define('_JSHOP_CART_EMPTY','Giỏ hàng của bạn không có sản phẩm.');
 define('_JSHOP_ORDER_DELIVERY_TIME', 'Delivery time');
 define('_JSHOP_GROUP', 'Group');
-define('_JSHOP_TITLE', 'Title');
+define('_JSHOP_TITLE', 'Tiêu Đề');
 define('_JSHOP_DISCOUNT', 'Discount');
 define('_JSHOP_USER_GROUPS_INFO', 'All groups');
 define('_JSHOP_BILL_ADDRESS', 'Địa chỉ thanh toán');
