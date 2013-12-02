@@ -977,7 +977,7 @@ define('_JSHOP_COUNT_DOWNLOAD', 'Số lượng tải về');
 define('_JSHOP_CLEAR', 'Làm mới');
 define('_JSHOP_SEND_MAIL', 'Gửi mail');
 define('_JSHOP_MAIL_HAS_BEEN_SENT', 'Email đã gửi');
-define('_JSHOP_SENT_INVOICE_MANUALLY', 'Send invoice manually');
+define('_JSHOP_SENT_INVOICE_MANUALLY', 'Gửi hóa đơn thủ công');
 define('_JSHOP_FIELD_M_NAME', 'Chữ lót');
 define('_JSHOP_FIELD_BIRTHDAY', 'Ngày sinh');
 define('_JSHOP_M_NAME', 'Chữ lót');
